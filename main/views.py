@@ -18,7 +18,7 @@ def create(response):
             n = form.cleaned_data["name"]
             t = ToDoList(name=n)
             t.save()
-        return HttpResponseRedirect("/%i" %t.id)
+        return HttpResponseRedirect("/%i" %t.id)   # redirecting to the newly created page
     else:
         form = CreatNewList()
     return render(response, "main/create.html", {"form":form})
